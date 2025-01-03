@@ -1,0 +1,17 @@
+*obj/
+*.o
+*.a
+*.out
+*.swp
+*.vscode/
+*test/
+*.idea
+.clang-format
+
+#*.gitignore
+
+pong
+
+*build.timestamp
+out
+diff.txt
