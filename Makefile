@@ -1,7 +1,9 @@
 ##========== SOURCES ==========##
 
 SRC =	main.cpp \
-		Game.cpp
+		Game.cpp \
+		ParticleSystem.cpp \
+		Particle.cpp
 
 
 ##========== NAMES ==========##
@@ -89,8 +91,7 @@ $(NAME) : $(OBJS)
 	@echo "$(GREEN)-= ft_irc compiled =-$(BASE_COLOR)"
 
 run: all
-	@export LD_LIBRARY_PATH=SFML/lib/
-	@./$(NAME)
+	@export LD_LIBRARY_PATH=SFML/lib/ && ./$(NAME)
 
 clean :
 	@rm -rf $(OBJS_DIR)

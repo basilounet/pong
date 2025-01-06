@@ -1,21 +1,16 @@
 #include <SFML/Graphics.hpp>
+#include <Game.h>
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode({800, 600}), "My window");
-	// run the program as long as the window is open
-	while (window.isOpen())
-	{
-		// check all the window's events that were triggered since the last iteration of the loop
-		while (const std::optional event = window.pollEvent())
-		{
-			// "close requested" event: we close the window
-			if (event->is<sf::Event::Closed>())
-				window.close();
-		}
-
-		window.clear();
+	Game game;
+	srand(time(nullptr));
+	try {
+		game.initGame();
+		game.run();
 	}
-
+	catch (const std::exception& e) {
+        std::cerr << RED << "Error while ponging : " << e.what() << BASE_COLOR << std::endl;
+    }
 	return 0;
 }
